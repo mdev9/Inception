@@ -1,6 +1,10 @@
 #!/bin/bash
 
-service mysql start
+mysqld_safe &
+
+until mysqladmin ping &>/dev/null; do
+  echo -n "."; sleep 1
+done
 
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
 mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
