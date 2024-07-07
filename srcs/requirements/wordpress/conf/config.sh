@@ -1,6 +1,9 @@
 #!/bin/bash
 
-sleep 10
+until mysqladmin ping -hmariadb --silent; do
+    echo "Waiting for MariaDB to be ready..."
+    sleep 5
+done
 
 # checks if wp-config.php exists, only executes the first time
 if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
