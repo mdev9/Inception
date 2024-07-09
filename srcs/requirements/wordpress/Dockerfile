@@ -10,7 +10,7 @@ RUN cd /var/www && tar -xzf wordpress-6.0-fr_FR.tar.gz && rm wordpress-6.0-fr_FR
 
 RUN	chown -R root:root /var/www/wordpress
 
-RUN echo 'clear_env = no' > /etc/php/7.4/fpm/pool.d/custom.conf && echo 'listen = wordpress:9000' >> /etc/php/7.4/fpm/pool.d/custom.conf
+RUN echo 'clear_env = no' > /etc/php/7.4/fpm/php.ini && echo 'listen = wordpress:9000' >> /etc/php/7.4/fpm/php.ini
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
