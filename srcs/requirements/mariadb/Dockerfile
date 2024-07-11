@@ -10,7 +10,7 @@ COPY conf/init-db.sh /usr/local/bin/init-db.sh
 
 RUN chmod +x /usr/local/bin/init-db.sh
 
-RUN "/usr/local/bin/init-db.sh"
+ENTRYPOINT ["/usr/local/bin/init-db.sh"]
 
 EXPOSE 3306
 

@@ -8,6 +8,8 @@ RUN mkdir -p /run/php
 
 RUN mkdir -p /var/www/html
 
+RUN echo "listen = wordpress:9000" >> etc/php/7.4/fpm/pool.d/www.conf
+
 RUN wget https://wordpress.org/latest.tar.gz -P /var/www/html
 
 RUN cd /var/www/html && tar -xzf latest.tar.gz && rm latest.tar.gz
