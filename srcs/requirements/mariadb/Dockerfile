@@ -12,4 +12,6 @@ RUN chmod +x /usr/local/bin/init-db.sh
 
 RUN "/usr/local/bin/init-db.sh"
 
+EXPOSE 3306
+
 CMD ["mysqld"]
