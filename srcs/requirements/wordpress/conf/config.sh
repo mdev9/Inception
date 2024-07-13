@@ -19,6 +19,12 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
                      --dbpass="${SQL_PASSWORD}" \
                      --dbhost="mariadb:3306" \
                      --path='/var/www/html'
+else
+    echo "wp-config.php found."
+fi
+
+if ! wp --allow-root core is-installed &>/dev/null; then
+    echo "wp core not installed, installing..."
 
     wp core install --allow-root \
                     --url=${WP_URL} \
@@ -28,14 +34,19 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
                     --admin_email=${WP_ADMIN_EMAIL} \
                     --path='/var/www/html'
 
+    echo "admin user: ${WP_ADMIN} created"
+
     wp user create --allow-root \
                    $WP_USER_NAME \
 		   $WP_USER_EMAIL \
                    --role=editor \
-                   --user_pass=password \
+                   --user_pass=${WP_USER_PASSWORD} \
                    --path='/var/www/html'
+
+    echo "user: ${WP_USER_NAME} created"
+
 else
-    echo "wp-config.php found."
+	echo "wp core already installed"
 fi
 
 $@
