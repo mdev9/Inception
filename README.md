@@ -33,35 +33,17 @@ Access the WordPress site by navigating to:
 ## 📂 Project Structure
 
   ```bash
-    inception/
-    │
-    ├── docker-compose.yml   # Docker Compose file for orchestrating services
-    ├── nginx/               # NGINX configuration
-    ├── wordpress/           # WordPress configuration
-    ├── mysql/               # MySQL database configuration
-    └── README.md            # You're here! 👋
-
-inception/
-│
-├── Makefile
-├── README.md                # You're here! 👋
-└── srcs/
-    ├── docker-compose.yml   # Docker Compose file for orchestrating services
-    └── requirements/
-        ├── mariadb/         # MySQL database configuration
-        │   ├── Dockerfile
-        │   └── conf/
-        │       ├── 50-server.cnf
-        │       └── init-db.sh
-        ├── nginx/           # NGINX configuration
-        │   ├── Dockerfile
-        │   └── conf/
-        │       └── nginx.conf
-        └── wordpress/       # WordPress configuration
-            ├── Dockerfile
-            └── conf/
-                └── config.sh
-  ```
+   inception/
+   │
+   ├── Makefile
+   ├── README.md                # You're here! 👋
+   └── srcs/
+       ├── docker-compose.yml   # Docker Compose file for orchestrating services
+       └── requirements/
+           ├── mariadb/         # MySQL database configuration
+           ├── nginx/           # NGINX configuration
+           └── wordpress/       # WordPress configuration
+     ```
 
 ## 🔍 Technologies Used
 
