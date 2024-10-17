@@ -43,7 +43,7 @@ Access the WordPress site by navigating to:
            ├── mariadb/         # MySQL database configuration
            ├── nginx/           # NGINX configuration
            └── wordpress/       # WordPress configuration
-     ```
+  ```
 
 ## 🔍 Technologies Used
 
